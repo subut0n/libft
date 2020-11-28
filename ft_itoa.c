@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: subuton <subuton@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:00:37 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/27 11:58:57 by subuton          ###   ########lyon.fr   */
+/*   Updated: 2020/11/28 11:00:18 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char    *ft_itoa(int n)
     return (str);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main()
 {
@@ -98,4 +98,4 @@ int main()
     nbr = 1;
     str = ft_itoa(nbr);
     printf("%s\n", str);
-}
+} */
