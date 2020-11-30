@@ -10,15 +10,15 @@ ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 OBJS	= ${SRCS:.c=.o}
 
-GCC		= gcc
+CC		= cc
 RM		= rm -f
 
 CFLAGS	= -Wall -Wextra -Werror
 
-%.o: %.c
-		${GCC} ${CFLAGS}  -I. -c $? -o $@
+.c.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 		ar rcs ${NAME} ${OBJS}
 		ranlib ${NAME}
 

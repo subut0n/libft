@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:00:37 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/28 11:00:18 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/11/29 15:34:49 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int numb_of_digits(int n)
     numb = 0;
     if (n < 0)
         n = -n;
+    if (n == 0)
+        numb = 1;
     while (n > 0)
     {
         n = n / 10;
