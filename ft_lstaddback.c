@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstaddback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/02 13:44:59 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/02 13:45:07 by addzikow         ###   ########lyon.fr   */
+/*   Created: 2020/12/02 14:51:10 by addzikow          #+#    #+#             */
+/*   Updated: 2020/12/02 17:29:16 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+void    ft_lstadd_back(t_list **alst, t_list *new)
 {
-    int size;
+    t_list *temp;
 
-    size = 0;
-    if(lst == NULL)
-        return (size);
-    while (lst != NULL)
-    {
-        size++;
-        lst = lst->next;
-    }
-    return(size);
+    temp = *alst;
+    if (!alst || !new)
+        return (NULL);
+    if (temp == NULL)
+        *alst = new;
+    while(temp->next)
+        temp = temp->next;
+    temp->next = new;
 }
