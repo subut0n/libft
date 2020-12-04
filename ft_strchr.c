@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: subuton <subuton@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:05:20 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/27 11:35:55 by subuton          ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 12:23:02 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char    *ft_strchr(const char *s, int c)
             return ((char *)&s[i]);
         i++;
     }
-    return (0);
+    if ((char)c == s[i])
+		return ((char *)&s[i]);
+    return (NULL);
 }
