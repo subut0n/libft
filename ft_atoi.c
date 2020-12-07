@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 15:33:07 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/26 15:33:14 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 17:21:21 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int ft_atoi(const char *str)
 {
-    int final;
-    int sign;
-    int i;
+	int final;
+	int sign;
+	int i;
 
     i = 0;
     while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)

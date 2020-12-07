@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:04:57 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/26 16:04:59 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 19:07:55 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,15 @@ static int find_numb_strings(char const *s, char c)
     int nbrWords;
 
     i = 0;
-    nbrWords = 1;
+    nbrWords = 0;
     while (s[i])
     {
-        if (s[i] == c)
-           nbrWords++;
+        while (s[i] != c)
+        {
+            if (s[i + 1] == c || s[i + 1] == '\0')
+                nbrWords++;
+            i++;
+        }
         i++;
     }
     return (nbrWords);
@@ -81,6 +85,7 @@ char    **ft_split(char const *s, char c)
     
     nbr_strings = find_numb_strings(s, c);
     tab = malloc(sizeof(char *) * (nbr_strings + 1));
+    tab[nbr_strings] = 0;
     malloc_strings(s, c, tab);
     copy_strings(s, c, tab);
     return (tab);
