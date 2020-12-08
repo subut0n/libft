@@ -6,13 +6,13 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:06:18 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/26 17:01:13 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/08 15:13:15 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen(char const *str)
+size_t ft_strlen(char const *str)
 {
     int i;
     

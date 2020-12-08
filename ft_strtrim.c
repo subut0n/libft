@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:14 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/07 17:48:39 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/08 15:06:26 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ char	*ft_strtrim(char const *str, char const *set)
 	return (tab);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main(void)
-// {
-// 	char *str = "          ";
-// 	char *set = "\t \n";
-// 	char *tab;
+int main(void)
+{
+	char *str = "          ";
+	char *set = "\t \n";
+	char *tab;
 
-// 	tab = ft_strtrim(str, set);
-// 	printf("%s\n", tab);
-// }
+	tab = ft_strtrim(str, set);
+	printf("%s\n", tab);
+}

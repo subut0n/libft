@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 16:05:57 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/08 15:14:00 by addzikow         ###   ########lyon.fr   */
+/*   Created: 2020/12/08 15:45:18 by addzikow          #+#    #+#             */
+/*   Updated: 2020/12/08 15:45:44 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dest, const char *src, size_t count)
+static int find_numb_strings(char const *s, char c)
 {
-    size_t i;
-    size_t dest_length;
-    char *tab;
+    int i;
+    int nbrWords;
 
     i = 0;
-    dest_length = ft_strlen(dest);
-    tab = &dest[dest_length];
-    if (dest_length >= count)
-        return (ft_strlen(src) + count);
-    while (src[i++] && i < ((count - 1) - dest_length))
-        tab[i] = src[i];
-    tab[i] = '\0';
-    return (ft_strlen(src) + dest_length);
+    nbrWords = 0;
+    while (s[i])
+    {
+        while (s[i] != c)
+        {
+            if (s[i + 1] == c || s[i + 1] == '\0')
+                nbrWords++;
+            i++;
+        }
+        i++;
+    }
+    return (nbrWords);
 }
