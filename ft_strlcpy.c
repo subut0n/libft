@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:06:05 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/02 17:35:31 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/09 14:49:57 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
-	/*if (dst == NULL || src == NULL)
-		return (NULL); */
 	i = 0;
 	while (src[i])
 		i++;

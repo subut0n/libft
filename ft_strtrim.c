@@ -6,11 +6,12 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:14 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/08 15:06:26 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/09 16:06:03 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int is_set(char c, char const *set)
 {
@@ -31,40 +32,25 @@ char	*ft_strtrim(char const *str, char const *set)
 	char *tab;
 	int i;
 	int j;
-	int k;
-	int size;
-	int count;
+	size_t count;
 
 	i = 0;
 	count = 0;
 	while (is_set(str[i++], set))
 		count++;
-	if (count == 0)
-		i = 0;
-	if (count > 0)
-		i = i - 1;
 	j = ft_strlen(str) - 1;
-	while (is_set(str[j--], set))
+	while(j > i && is_set(str[j], set))
+	{
 		count++;
-	size = ft_strlen(str) - count;
-	if (!(tab = malloc(sizeof(char *) * (size + 1))))
-		return (NULL);
-	k = 0;
-	j = (i + size);
-	while (i != j)
-		tab[k++] = str[i++];
-	tab[k] = '\0';
+		j--;
+	}
+	if (count == ft_strlen(str))
+	{
+		if(!(tab = malloc(sizeof(char) * 1)))
+			return (NULL);
+		tab[0] = '\0';
+	}
+	else
+		tab = ft_substr(str, i, (ft_strlen(str) - count));
 	return (tab);
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-	char *str = "          ";
-	char *set = "\t \n";
-	char *tab;
-
-	tab = ft_strtrim(str, set);
-	printf("%s\n", tab);
 }

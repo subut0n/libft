@@ -6,12 +6,11 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:04:57 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/08 18:51:26 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/09 13:56:57 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int find_numb_strings(char const *s, char c)
 {
@@ -58,9 +57,6 @@ static int malloc_strings(char const *s, char c, char **tab)
     wordlen = 0;
     while (s[i])
     {
-        // fflush(stdout);
-        // printf("i = %d\n", i);
-        // printf("j = %d\n", j);
         while (s[i + wordlen] != c && s[i + wordlen])
             wordlen++;
         if(wordlen > 0)
@@ -124,21 +120,3 @@ char    **ft_split(char const *s, char c)
         copy_strings(s, c, tab);
     return (tab);
 }
-
-
-// int main()
-// {
-//     char *s = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
-//     int n;
-//     printf("%d\n", n = find_numb_strings(s, ' '));
-//     char **t = malloc((n+1) * sizeof(char*));
-//     t[n] = NULL;
-//     malloc_strings(s, ' ', t);
-//     copy_strings(s, ' ', t);
-//     while (*t)
-//     {
-//         printf("%s\n", *t);
-//         t++;
-//     }
-//     return (0);
-// }

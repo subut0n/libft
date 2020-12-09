@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 14:30:32 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/07 14:30:32 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/09 14:00:00 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
     element = lst;
     while (element)
     {
-        element
+        element;
         
         
     }
