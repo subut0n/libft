@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:07 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/26 17:01:42 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/10 19:27:48 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ char    *ft_strrchr(const char *s, int c)
 {
     int i;
     
-    i = ft_strlen(s);
+    i = 0;
+    while (s[i])
+        i++;
     while (i >= 0)
     {
         if (s[i] == c)
-            return ("coucou");
+            return ((char*)&s[i]);
         i--;
     }
     return (0);

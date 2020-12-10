@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 11:25:13 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/28 14:02:52 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/10 19:56:30 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned int i;
-	int compare;
+	int		i;
+	char	*str;
+	char	*str2;
+	int		l;
 
 	i = 0;
-	if (needle == NULL)
-		return ((char *)haystack);
-	while (haystack[i] && i < len)
+	str = (char*)haystack;
+	str2 = (char*)needle;
+	if (needle[0] == '\0')
+		return (str);
+	l = ft_strlen(needle);
+	while (str[i] && i <= (int)len - l)
 	{
-		compare = ft_strncmp(haystack, needle, len);
-		if (compare == 0)
-			return ((char *)haystack);
+		if (ft_strncmp(&str[i], str2, l) == 0)
+			return (&str[i]);
 		i++;
 	}
 	return (NULL);

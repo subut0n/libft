@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:03:06 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/07 15:34:44 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/10 20:03:50 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,18 @@
 void    *ft_memchr(const void *s, int c, size_t n)
 {
     size_t i;
-    char *tobyte;
+    unsigned char *tobyte;
 
     i = 0;
-    tobyte = (char *)s;
-    while (i < n && tobyte[i] != (char)c)
-        i++;
-    if (i == n)
-        return (NULL);
-    return((void *)tobyte);
-
+    tobyte = (unsigned char *)s;
+	if (s != NULL)
+	{
+		while (i < n)
+		{
+			if (tobyte[i] == (unsigned char)c)
+				return ((void *)&tobyte[i]);
+			i++;
+		}
+	}
+	return (NULL);
 }

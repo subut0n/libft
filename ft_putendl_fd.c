@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:04:32 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/26 17:04:27 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/10 20:11:24 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void    ft_putendl_fd(char *s, int fd)
 {
-    int size;
+    int         size;
+    const char  newline = '\n';
 
     size = ft_strlen(s);
     write(fd, s, size);
-    write(fd, "\0", 1);
+    write(fd, &newline, 1);
 }

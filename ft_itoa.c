@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:00:37 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/29 15:34:49 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/10 20:08:04 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ static char *pos_transcripted_string(int n, char * str)
 
     nbr = n;
     i = numb_of_digits(n) - 1;
-    while (i >= 0)
+    if (n = 0)
+        return('0');
+    while (i > 0)
     {
         str[i--] = (nbr % 10) + 48;
         nbr = nbr / 10;
