@@ -6,22 +6,23 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 14:51:10 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/03 15:32:55 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 11:59:35 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_back(t_list **alst, t_list *new)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-    t_list *temp;
+	t_list *lst;
 
-    temp = *alst;
-    if (!alst || !new)
-        return ;
-    if (temp == NULL)
-        *alst = new;
-    while(temp->next)
-        temp = temp->next;
-    temp->next = new;
+	if (!new)
+		return ;
+	if (!alst || !*alst)
+		*alst = new;
+	else
+	{
+		lst = ft_lstlast(*alst);
+		lst->next = new;
+	}
 }

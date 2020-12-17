@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 15:18:10 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/03 15:32:56 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 11:55:48 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void    ft_lstclear(t_list **lst, void(*del)(void *))
 {
     t_list *element;
+    t_list *save;
 
     element = *lst;
-    if (*lst == NULL)
-		return ;
-	while (element->next)
+	while (element)
     {
-        if (del)
-            del(element->content);
-        free(element);
+        save = element->next;
+        ft_lstdelone(element,del);
+        element = save;
     }
+    *lst = NULL;
 }
