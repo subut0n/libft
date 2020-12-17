@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:14 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/17 12:05:06 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 16:10:06 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,31 +30,25 @@ static int is_set(char c, char const *set)
 char	*ft_strtrim(char const *str, char const *set)
 {
 	char *tab;
-	int start;
-	int end;
-	size_t count;
+	size_t start;
+	size_t end;
 
 	start = 0;
-	count = 0;
 	if (!str)
 		return (NULL);
 	if (!set)
 		return(ft_strdup(str));
-	while (is_set(str[start++], set))
-		count++;
-	end = ft_strlen(str) - 1;
-	while(end > start && is_set(str[end], set))
+	end = ft_strlen(str);
+	while(is_set(str[start], set))
+		start++;
+	if (start == ft_strlen(str))
 	{
-		count++;
-		end--;
-	}
-	if (count == ft_strlen(str))
-	{
-		if(!(tab = malloc(sizeof(char) * 1)))
+		if(!(tab = strdup("")))
 			return (NULL);
-		tab[0] = '\0';
+		return (tab);
 	}
-	else
-		tab = ft_substr(str, start, (ft_strlen(str) - count));
+	while (is_set(str[end - 1], set))
+		end--;
+	tab = ft_substr(str, start, (end - start));
 	return (tab);
 }

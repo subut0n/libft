@@ -6,32 +6,35 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:00:37 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/10 20:08:04 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 17:08:20 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int numb_of_digits(int n)
+static int	numb_of_digits(int n)
 {
-    int numb;
+    int		numb;
+    long	nb;
 
+    nb = n;
     numb = 0;
-    if (n < 0)
-        n = -n;
-    if (n == 0)
+    if (nb < 0)
+        nb = -nb;
+    if (nb == 0)
         numb = 1;
-    while (n > 0)
+    while (nb > 0)
     {
-        n = n / 10;
+        nb = nb / 10;
         numb++;
     }
     return (numb);
 }
 
-static char *malloc_string(int n)
+static char	*malloc_string(int n)
 {
-    char *str;
+    char	*str;
 
     if (n < 0)
     {
@@ -46,16 +49,20 @@ static char *malloc_string(int n)
     return (str);
 }
 
-static char *pos_transcripted_string(int n, char * str)
+static char	*pos_transcripted_string(int n, char * str)
 {
-    int i;
-    long nbr;
+    int		i;
+    long	nbr;
 
     nbr = n;
     i = numb_of_digits(n) - 1;
-    if (n = 0)
-        return('0');
-    while (i > 0)
+    if (n == 0)
+    {
+        str[0] = '0';
+        str[1] = '\0';
+        return(str);
+    }
+    while (i >= 0)
     {
         str[i--] = (nbr % 10) + 48;
         nbr = nbr / 10;
@@ -63,10 +70,10 @@ static char *pos_transcripted_string(int n, char * str)
     return (str);
 }
 
-static char *neg_transcripted_string(int n, char *str)
+static char	*neg_transcripted_string(int n, char *str)
 {
-    int i;
-    long nbr;
+    int		i;
+    long	nbr;
 
     nbr = n;
     i = numb_of_digits(n);
@@ -80,9 +87,9 @@ static char *neg_transcripted_string(int n, char *str)
     return (str);
 }
 
-char    *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-    char *str;
+    char	*str;
 
     str = malloc_string(n);
     if (n < 0)
@@ -91,15 +98,3 @@ char    *ft_itoa(int n)
         str = pos_transcripted_string(n, str);
     return (str);
 }
-
-/* #include <stdio.h>
-
-int main()
-{
-    int nbr;
-    char *str;
-
-    nbr = 1;
-    str = ft_itoa(nbr);
-    printf("%s\n", str);
-} */
