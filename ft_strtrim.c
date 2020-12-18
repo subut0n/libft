@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:14 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/18 16:41:32 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 18:12:30 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char		*ft_strtrim(char const *str, char const *set)
 	}
 	while (is_set(str[end - 1], set))
 		end--;
-	tab = ft_substr(str, start, (end - start));
+	if(!(tab = ft_substr(str, start, (end - start))))
+		return (NULL);
 	return (tab);
 }

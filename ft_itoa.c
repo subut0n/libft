@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:00:37 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/18 14:10:02 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 17:58:45 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ static char	*pos_transcripted_string(int n, char *str)
 
 	nbr = n;
 	i = numb_of_digits(n) - 1;
+	str[i + 1] = '\0';
 	if (n == 0)
 	{
 		str[0] = '0';
@@ -77,6 +78,7 @@ static char	*neg_transcripted_string(int n, char *str)
 
 	nbr = n;
 	i = numb_of_digits(n);
+	str[i + 1] = '\0';
 	str[0] = '-';
 	nbr = -nbr;
 	while (i >= 1)
@@ -91,7 +93,8 @@ char		*ft_itoa(int n)
 {
 	char	*str;
 
-	str = malloc_string(n);
+	if (!(str = malloc_string(n)))
+		return (NULL);
 	if (n < 0)
 		str = neg_transcripted_string(n, str);
 	else

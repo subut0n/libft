@@ -19,7 +19,7 @@ RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror
 
 $(NAME):	${OBJS}
-		ar rcs ${NAME} ${OBJS}
+		ar rcs ${NAME} $?
 
 %.o: 	%.c	libft.h
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
