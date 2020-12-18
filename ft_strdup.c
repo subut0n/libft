@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:05:34 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/26 17:03:38 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 15:07:47 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strdup(const char *s)
 {
-	char *tab;
-	int size;
-	int i;
+	char	*tab;
+	int		size;
+	int		i;
 
 	i = 0;
 	size = 0;
@@ -34,4 +34,4 @@ char	*ft_strdup(const char *s)
 	}
 	tab[i] = '\0';
 	return (tab);
-}	
+}

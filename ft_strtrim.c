@@ -6,16 +6,15 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:14 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/17 16:10:06 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 16:41:32 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int is_set(char c, char const *set)
+static int	is_set(char c, char const *set)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (set[i])
@@ -27,23 +26,23 @@ static int is_set(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *str, char const *set)
+char		*ft_strtrim(char const *str, char const *set)
 {
-	char *tab;
-	size_t start;
-	size_t end;
+	char	*tab;
+	size_t	start;
+	size_t	end;
 
 	start = 0;
 	if (!str)
 		return (NULL);
 	if (!set)
-		return(ft_strdup(str));
+		return (ft_strdup(str));
 	end = ft_strlen(str);
-	while(is_set(str[start], set))
+	while (is_set(str[start], set))
 		start++;
 	if (start == ft_strlen(str))
 	{
-		if(!(tab = strdup("")))
+		if (!(tab = strdup("")))
 			return (NULL);
 		return (tab);
 	}

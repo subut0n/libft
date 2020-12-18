@@ -20,9 +20,8 @@ CFLAGS		= -Wall -Wextra -Werror
 
 $(NAME):	${OBJS}
 		ar rcs ${NAME} ${OBJS}
-		ranlib ${NAME}
 
-.c.o:
+%.o: 	%.c	libft.h
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 bonus: 	${OBJS_BONUS} ${OBJS}

@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:05:42 by addzikow          #+#    #+#             */
-/*   Updated: 2020/11/26 16:58:07 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 15:08:45 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	int size;
-	char *tab;
+	int		i;
+	int		j;
+	int		size;
+	char	*tab;
 
 	size = ft_strlen(s1) + ft_strlen(s2);
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	if(!(tab = malloc(sizeof(s1) * size + 1)))
+	if (!(tab = malloc(sizeof(s1) * size + 1)))
 		return (NULL);
 	i = 0;
 	j = 0;

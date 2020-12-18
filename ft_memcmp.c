@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:03:27 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/10 19:58:08 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 14:35:34 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*str1;
 	unsigned char	*str2;
 
-    i = 0;
-    str1 = (unsigned char*)s1;
+	i = 0;
+	str1 = (unsigned char*)s1;
 	str2 = (unsigned char*)s2;
 	if (s1 != NULL && s2 != NULL)
 	{

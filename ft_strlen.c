@@ -6,18 +6,18 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:06:18 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/08 15:13:15 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 15:11:42 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(char const *str)
+size_t	ft_strlen(char const *str)
 {
-    int i;
-    
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
