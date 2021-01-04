@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:03:43 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/18 18:31:58 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/04 16:52:54 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*srctobyte;
 	char	*desttobyte;
 
+	if (!dest || !src)
+		return(NULL);
 	i = 0;
 	srctobyte = (char *)src;
 	desttobyte = (char *)dest;
-	if (!dest || !src)
-		return (NULL);
 	while (i < n)
 	{
 		desttobyte[i] = srctobyte[i];
