@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@42student.lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 15:34:09 by addzikow          #+#    #+#             */
-/*   Updated: 2021/01/05 10:06:38 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/05 12:15:49 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char			*dest;
-	unsigned int	i;
+	char *ptr;
 
 	if (count == 0 || size == 0)
-		return (NULL);
-	if (!(dest = malloc(size * count)))
+		count = size = 1;
+	if (!(ptr = malloc(count * size)))
 		return (0);
-	i = 0;
-	while (i <= count)
-		((char *)dest)[i++] = 0;
-	return (dest);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

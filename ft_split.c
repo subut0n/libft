@@ -6,11 +6,14 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:04:57 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/18 15:04:48 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/07 15:27:03 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_strlen.c"
+#include <stdio.h>
+
 
 static int	find_numb_strings(char const *s, char c)
 {
@@ -19,6 +22,10 @@ static int	find_numb_strings(char const *s, char c)
 
 	i = 0;
 	nbr_words = 0;
+	if (!ft_strlen(s))
+		return(0);
+	if (!c)
+		return (1);
 	while (s[i])
 	{
 		while (s[i] != c)
@@ -44,17 +51,19 @@ static void	free_malloc(char **tab, int j)
 		free(tab[i]);
 		i++;
 	}
+	free(tab);
+	return ;
 }
 
-static int	malloc_strings(char const *s, char c, char **tab)
+static int	malloc_strings(char const *s, char c, char **tab, int j)
 {
 	int		i;
-	int		j;
 	int		wordlen;
 
 	i = 0;
-	j = 0;
 	wordlen = 0;
+	if (!s || !tab)
+		return (0);
 	while (s[i])
 	{
 		while (s[i + wordlen] != c && s[i + wordlen])
@@ -99,6 +108,27 @@ static void	copy_strings(char const *s, char c, char **tab)
 	}
 }
 
+static int return_full_string(char const *s, char **tab)
+{
+	int i;
+	int length;
+
+	length = ft_strlen(s);
+	if(!(tab[0] = malloc(sizeof(char) * (length + 1))))
+	{
+		free_malloc(tab, 1);
+		return (0);
+	}
+	i = 0;
+	while (i < length)
+	{
+		tab[0][i] = s[i];
+		i++;
+	}
+	tab[0][i] = '\0';
+	return (1);
+}
+
 char		**ft_split(char const *s, char c)
 {
 	int		nbr_strings;
@@ -108,13 +138,18 @@ char		**ft_split(char const *s, char c)
 	nbr_strings = find_numb_strings(s, c);
 	if (!(tab = malloc(sizeof(char *) * (nbr_strings + 1))))
 		return (NULL);
+
 	tab[nbr_strings] = NULL;
-	is_malloc_ok = malloc_strings(s, c, tab);
-	if (is_malloc_ok == 0)
+	if(!nbr_strings)
+		return (tab);
+	if (!c)
 	{
-		free(tab);
-		return (NULL);
+		if (!(is_malloc_ok = return_full_string(s, tab)))
+			return (NULL);
+		return (tab);
 	}
+	if (!(is_malloc_ok = malloc_strings(s, c, tab, 0)))
+		return (NULL);
 	else
 		copy_strings(s, c, tab);
 	return (tab);

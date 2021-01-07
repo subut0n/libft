@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:07 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/18 15:17:33 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/06 16:55:23 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	while (i >= 0)
 	{
-		if (s[i] == c)
-			return ((char*)&s[i]);
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (0);
