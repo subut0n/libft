@@ -6,14 +6,11 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:04:57 by addzikow          #+#    #+#             */
-/*   Updated: 2021/01/07 15:27:03 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/07 17:38:05 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_strlen.c"
-#include <stdio.h>
-
 
 static int	find_numb_strings(char const *s, char c)
 {
