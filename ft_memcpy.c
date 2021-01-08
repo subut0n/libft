@@ -6,17 +6,16 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:03:43 by addzikow          #+#    #+#             */
-/*   Updated: 2021/01/05 12:03:07 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/08 14:13:24 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char *desttobyte;
-	const char *srctobyte;
+	char		*desttobyte;
+	const char	*srctobyte;
 
 	if (!dest && !src)
 		return (NULL);
@@ -25,6 +24,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	while (n--)
 		*desttobyte++ = *srctobyte++;
 	return (dest);
-
 }
-
