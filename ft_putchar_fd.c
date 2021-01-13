@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:04:16 by addzikow          #+#    #+#             */
-/*   Updated: 2020/12/18 14:41:05 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 13:49:10 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
+	if (!fd)
+		return ;
 	write(fd, &c, 1);
 }

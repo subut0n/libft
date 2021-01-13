@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:14 by addzikow          #+#    #+#             */
-/*   Updated: 2021/01/08 14:24:56 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 12:16:19 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char		*ft_strtrim(char const *str, char const *set)
 		start++;
 	if (start == ft_strlen(str))
 	{
-		if (!(tab = strdup("")))
+		if (!(tab = ft_strdup("")))
 			return (NULL);
 		return (tab);
 	}

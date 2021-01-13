@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:07:31 by addzikow          #+#    #+#             */
-/*   Updated: 2021/01/08 14:25:58 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 12:18:34 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	if (start >= ft_strlen(s))
 	{
 		if (!(str = malloc(sizeof(char) * 1)))

@@ -6,7 +6,7 @@
 /*   By: addzikow <addzikow@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:04:57 by addzikow          #+#    #+#             */
-/*   Updated: 2021/01/08 15:35:50 by addzikow         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 13:43:55 by addzikow         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,8 @@ char		**ft_split(char const *s, char c)
 	char	**tab;
 	int		nbr_str_and_is_malloc_ok;
 
+	if (!s)
+		return (NULL);
 	nbr_str_and_is_malloc_ok = find_numb_strings(s, c);
 	if (!(tab = malloc(sizeof(char *) * (nbr_str_and_is_malloc_ok + 1))))
 		return (NULL);
@@ -128,11 +130,8 @@ char		**ft_split(char const *s, char c)
 			free_malloc(tab, 1);
 			return (0);
 		}
-		if (!(nbr_str_and_is_malloc_ok = copy_strings(s, c, tab, 0)))
-			return (NULL);
-		return (tab);
 	}
-	if (!(nbr_str_and_is_malloc_ok = malloc_strings(s, c, tab, 0)))
+	if (c && !(nbr_str_and_is_malloc_ok = malloc_strings(s, c, tab, 0)))
 		return (NULL);
 	else
 		copy_strings(s, c, tab, 0);
